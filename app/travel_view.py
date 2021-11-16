@@ -9,7 +9,7 @@ def travel():
     msg = ''
     if request.method == 'POST':
         ec_number = session['ec_number']
-        email = session['email']
+        userEmail = session['userEmail']
         # Get form data
         dept = request.form['dept']
         position = request.form['position']
@@ -27,7 +27,7 @@ def travel():
           Dear Sir/Ma'am \n
 
           I hereby apply for a Travel Allowance, with the details attached below \n
-          Email: {email}
+          Email: {userEmail}
           Department: {dept} \n
           Position: {position} \n
           Destination: {destination} \n

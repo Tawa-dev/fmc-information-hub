@@ -9,7 +9,7 @@ from flask import render_template, request, url_for, redirect, session
 def leave_days():
     msg = ''
     ec_number = session['ec_number']
-    email = session['email']
+    userEmail = session['userEmail']
     # Fetch for updated available leave days
     user = Database.find_one("available_days",{'ec_number':ec_number})
     # Convert available leave days to interger
@@ -35,7 +35,7 @@ def leave_days():
           Dear Sir/Ma'am \n
 
           I hereby apply for leave, with the details attached below \n
-          Email: {email} \n
+          Email: {userEmail} \n
           Department: {dept} \n
           Position: {position} \n
           Leave Days: {requested_days}

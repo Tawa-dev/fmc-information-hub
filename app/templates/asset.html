@@ -1,0 +1,174 @@
+{% extends 'layout.html' %} {% block title %}Asset Transfer{% endblock %} {%
+block content %}
+
+<h2>Asset Transfer</h2>
+
+<form action="{{ url_for('asset_transfer') }}" method="post" class="mx-3 mt-3">
+  <div class="form-group">
+    <label for="dept">Department</label>
+    <select
+      class="form-control"
+      name="dept"
+      id="dept"
+      class="dept_option"
+      required
+    >
+      <option value="">--Select Department--</option>
+      <option name="dept" value="Audit and Compliance">
+        Audit and Compliance
+      </option>
+      <option value="Back Office">Back Office</option>
+      <option value="Bussiness Loans">Bussiness Loans</option>
+      <option value="Finance">Finance</option>
+      <option value="ICT">ICT</option>
+      <option value="Smartex">Smartex</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="position">Position</label>
+    <select
+      class="form-control"
+      name="position"
+      id="position"
+      class="position_option"
+      required
+    >
+      <option value="">--Select Position--</option>
+      <option value="Adminstrator">Adminstrator</option>
+      <option value="Audit Assistant">Audit Assistant</option>
+      <option value="BackOffice Assistant">Back Office Assistant</option>
+      <option value="Bussiness Loans Assistant">
+        Bussiness Loans Assistant
+      </option>
+      <option value="Cashier">Cashier</option>
+      <option value="ICT Manager">ICT Manager</option>
+      <option value="ICT Assistant">ICT Assistant</option>
+      <option value="Loan Officer">Loan Officer</option>
+      <option value="Manager">Manager</option>
+      <option value="System Admin">System Admin</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="asset_name">Asset Name</label>
+    <input
+      class="form-control"
+      type="text"
+      name="asset_name"
+      id="asset_name"
+      class="asset_name"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="serial_num">Serial Number</label>
+    <input
+      class="form-control"
+      type="text"
+      name="serial_num"
+      id="serial_num"
+      class="serial_num"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="asset_num">Asset Number</label>
+    <input
+      class="form-control"
+      type="text"
+      name="asset_num"
+      id="asset_num"
+      class="asset_num"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="from_branch">From Branch</label>
+    <select class="form-control" name="from_branch" id="from_branch" required>
+      <option value="">--Select From Branch--</option>
+      <option value="Harare">Harare</option>
+      <option value="Mutare">Mutare</option>
+      <option value="Bulawayo">Bulawayo</option>
+      <option value="Chinhoyi">Chinhoyi</option>
+      <option value="Bindura">Bindura</option>
+      <option value="Marondera">Marondera</option>
+      <option value="Masvingo">Masvingo</option>
+      <option value="Kwekwe">Kwekwe</option>
+      <option value="Gweru">Gweru</option>
+      <option value="Zvishavane">Zvishavane</option>
+      <option value="Chiredzi">Chiredzi</option>
+      <option value="Murehwa">Murehwa</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="from_dept">From Department</label>
+    <select class="form-control" name="from_dept" id="from_dept" required>
+      <option value="">--Select From Department--</option>
+      <option name="dept" value="Audit and Compliance">
+        Audit and Compliance
+      </option>
+      <option value="Back Office">Back Office</option>
+      <option value="Bussiness Loans">Bussiness Loans</option>
+      <option value="Finance">Finance</option>
+      <option value="ICT">ICT</option>
+      <option value="Smartex">Smartex</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="to_branch">To Branch</label>
+    <select class="form-control" name="to_branch" id="to_branch" required>
+      <option value="">--Select To Branch--</option>
+      <option value="Harare">Harare</option>
+      <option value="Mutare">Mutare</option>
+      <option value="Bulawayo">Bulawayo</option>
+      <option value="Chinhoyi">Chinhoyi</option>
+      <option value="Bindura">Bindura</option>
+      <option value="Marondera">Marondera</option>
+      <option value="Masvingo">Masvingo</option>
+      <option value="Kwekwe">Kwekwe</option>
+      <option value="Gweru">Gweru</option>
+      <option value="Zvishavane">Zvishavane</option>
+      <option value="Chiredzi">Chiredzi</option>
+      <option value="Murehwa">Murehwa</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="to_dept">To Department</label>
+    <select class="form-control" name="to_dept" id="to_dept" required>
+      <option value="">--Select To Department--</option>
+      <option name="dept" value="Audit and Compliance">
+        Audit and Compliance
+      </option>
+      <option value="Back Office">Back Office</option>
+      <option value="Bussiness Loans">Bussiness Loans</option>
+      <option value="Finance">Finance</option>
+      <option value="ICT">ICT</option>
+      <option value="Smartex">Smartex</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="reason">Reason</label>
+    <textarea
+      class="form-control"
+      name="reason"
+      id="reason"
+      cols="30"
+      rows="10"
+      placeholder="Reason/s for Asset Tranfer"
+      required
+    ></textarea>
+  </div>
+  <div class="form-group">
+    <label for="dateOfTransfer">Date Of Tranfer</label>
+    <input
+      class="form-control"
+      type="date"
+      name="dateOfTransfer"
+      id="dateOfTransfer"
+      required
+    />
+  </div>
+  <input class="form-submit dash-btn" type="submit" value="Register" />
+  <p class="msg done">{{ msg }}</p>
+</form>
+
+{% endblock %}

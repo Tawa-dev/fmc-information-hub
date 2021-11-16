@@ -1,0 +1,73 @@
+{% extends 'layout.html' %} {% block title %}Dashboard{% endblock %} {% block
+content %}
+<div class="h-container">
+  <h2>Leave Days</h2>
+  <p class="leave-title">
+    Available Leave Days: <span class="leave-num">{{available_days}}</span>
+  </p>
+</div>
+<div class="outer-container">
+  <h5>Apply For Leave</h5>
+  <form action="{{ url_for('leave_days') }}" method="post" class="mx-3">
+    <div class="inner-container">
+      <div class="form-group">
+        <label for="dept">Department</label>
+        <select
+          class="form-control"
+          name="dept"
+          id="dept"
+          class="dept_option"
+          required
+        >
+          <option value="">--Select Department--</option>
+          <option name="dept" value="Audit and Compliance">
+            Audit and Compliance
+          </option>
+          <option value="Back Office">Back Office</option>
+          <option value="Bussiness Loans">Bussiness Loans</option>
+          <option value="Finance">Finance</option>
+          <option value="ICT">ICT</option>
+          <option value="Smartex">Smartex</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="position">Position</label>
+        <select
+          class="form-control"
+          name="position"
+          id="position"
+          class="position_option"
+          required
+        >
+          <option value="">--Select Position--</option>
+          <option value="Adminstrator">Adminstrator</option>
+          <option value="Audit Assistant">Audit Assistant</option>
+          <option value="BackOffice Assistant">Back Office Assistant</option>
+          <option value="Bussiness Loans Assistant">
+            Bussiness Loans Assistant
+          </option>
+          <option value="Cashier">Cashier</option>
+          <option value="ICT Manager">ICT Manager</option>
+          <option value="ICT Assistant">ICT Assistant</option>
+          <option value="Loan Officer">Loan Officer</option>
+          <option value="Manager">Manager</option>
+          <option value="System Admin">System Admin</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="days">Days</label>
+        <input
+          class="form-control"
+          type="number"
+          name="days"
+          id="days"
+          class="days"
+          required
+        />
+      </div>
+      <input class="form-submit dash-btn" type="submit" value="Apply" />
+      <p class="msg done">{{ msg }}</p>
+    </div>
+  </form>
+</div>
+{% endblock %}

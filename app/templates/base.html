@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{%endblock %}</title>
+
+    <!-- font awesome-->
+    <script src="{{ url_for('static', filename='js/all.min.js') }}"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='js/all.min.js') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg px-3" id="navBar">
+      <a href="{{url_for('home')}}" class="navbar-brand"
+        ><span class="main-logo">FMC </span
+        ><span class="s-logo">Information Hub</span></a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#myNav"
+      >
+        <span class="navbar-icon"><i class="fas fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse a" id="myNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item active">
+            <a href="{{url_for('home')}}" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a href="{{url_for('corporate')}}" class="nav-link"
+              >Corporate Statements</a
+            >
+          </li>
+          <li class="nav-item active">
+            <a href="{{url_for('uniform')}}" class="nav-link">Uniform Manual</a>
+          </li>
+        </ul>
+        <div class="nav-buttons">
+          <a href="{{url_for('register')}}" class="signUp"
+            ><button class="btn btn-default" type="button">Sign Up</button></a
+          >
+          <a href="{{url_for('login')}}" class="logIn"
+            ><button class="btn btn-default" type="button">Log In</button></a
+          >
+        </div>
+      </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+      <div class="footer">
+        <p class="mx-auto my-auto copyright-text">
+          &copy;2021 FMC Information Hub | All Rights Reserved |
+          <a
+            href="{{url_for('static', filename='assets/Code of Conduct Policy.pdf')}}"
+            target="_blank"
+            >Code Of Conduct Policy</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  </body>
+</html>

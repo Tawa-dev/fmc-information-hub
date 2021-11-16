@@ -1,0 +1,38 @@
+{% extends "account_base.html" %} {% block title %}Register{% endblock %} {%
+block content %}
+<div class="register">
+  <h1>Register</h1>
+  <div class="links">
+    <a href="{{ url_for('login') }}">Login</a>
+    <a href="{{ url_for('register') }}" class="active">Register</a>
+  </div>
+  <form action="{{ url_for('register') }}" method="post" autocomplete="off">
+    <label for="ec_number">
+      <i class="fas fa-user"></i>
+    </label>
+    <input
+      type="text"
+      name="ec_number"
+      placeholder="EC Number"
+      id="ec_number"
+      required
+    />
+    <label for="password">
+      <i class="fas fa-lock"></i>
+    </label>
+    <input
+      type="password"
+      name="password"
+      placeholder="Password"
+      id="password"
+      required
+    />
+    <label for="email">
+      <i class="fas fa-envelope"></i>
+    </label>
+    <input type="email" name="email" placeholder="Email" id="email" required />
+    <div class="msg done">{{ msg }}</div>
+    <input type="submit" value="Register" />
+  </form>
+</div>
+{% endblock %}

@@ -27,7 +27,7 @@ def travel():
           Dear Sir/Ma'am \n
 
           I hereby apply for a Travel Allowance, with the details attached below \n
-          Email: {userEmail}
+          Email: {userEmail} \n
           Department: {dept} \n
           Position: {position} \n
           Destination: {destination} \n

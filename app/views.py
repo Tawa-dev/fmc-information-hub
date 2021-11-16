@@ -88,7 +88,7 @@ def register():
             # Account doesnt exists and the form data is valid, now insert new account into users collection
             employee = {"ec_number": ec_number, "email": email,"password": hash_password}
             # inititalize available leave days to 3
-            availableDays = {"ec_number": ec_number,"days":3}
+            availableDays = {"ec_number": ec_number,"days":36}
             Database.insert("users",employee)
             Database.insert("available_days",availableDays)
             msg = 'You have successfully registered! You can Login'

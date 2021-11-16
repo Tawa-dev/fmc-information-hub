@@ -37,7 +37,7 @@ def login():
                 session['loggedin'] = True
                 #session['_id'] = user['_id']
                 session['ec_number'] = user['ec_number']
-                session['email'] = user['email']
+                session['userEmail'] = user['email']
                 # Redirect to dashboard page
                 return redirect(url_for('dashboard'))
             else:

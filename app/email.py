@@ -16,6 +16,6 @@ mail = Mail(app)
 #MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
 
 def sendEmail(subject,content):
-    msg2 = Message(subject, sender='bec2000@gmail.com', recipients=['ditodester@gmail.com'])
+    msg2 = Message(subject, sender='bec2000@gmail.com', recipients=['tadiwacherish@gmail.com'])
     msg2.body = content
     mail.send(msg2)

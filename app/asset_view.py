@@ -11,7 +11,7 @@ def asset_transfer():
     msg = ''
     if request.method == 'POST':
         ec_number = session['ec_number']
-        email = session['email']
+        userEmail = session['userEmail']
         # Get form data
         dept = request.form['dept']
         position = request.form['position']
@@ -39,7 +39,7 @@ def asset_transfer():
           Dear Sir/Ma'am \n
 
           I hereby register the Asset with details below \n
-          Email: {email} \n
+          Email: {userEmail} \n
           Department: {dept} \n
           Position: {position} \n
           Asset Name: {asset_name} \n
